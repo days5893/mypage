@@ -1,0 +1,370 @@
+@charset"UTF-8";
+
+
+@media screen and (min-width:320px) {
+  * {
+    margin: 0;
+    padding: 0
+  }
+
+  body {
+    position: absolute;
+    width: 100%;
+    background-color: #f6f6f6;
+    font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", serif;
+    font-size: 14px;
+  }
+
+  .wrap {
+    overflow: hidden;
+  }
+
+  a {
+    text-decoration: none
+  }
+
+  iframe {
+    width: 100%;
+  }
+
+  blockquote {
+    position: relative;
+    padding: 30px 15px 8px 15px;
+    box-sizing: border-box;
+    font-style: italic;
+    background: #efefef;
+    color: #555
+  }
+
+  blockquote:before {
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+    left: 15px;
+    content: "\f10d";
+    font-family: FontAwesome;
+    color: #cfcfcf;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 900
+  }
+
+  blockquote p {
+    padding: 0;
+    margin: 10px 0;
+    line-height: 1.7
+  }
+
+  blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em
+  }
+
+  blockquote {
+    position: relative;
+    box-sizing: border-box;
+    font-style: italic;
+    background: #efefef;
+    color: #555;
+  }
+
+  blockquote:before {
+    display: inline-block;
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    content: "“";
+    font-family: sans-serif;
+    color: #cfcfcf;
+    font-size: 90px;
+    line-height: 1
+  }
+
+  blockquote p {
+    padding: 0;
+    margin: 10px 0;
+    line-height: 1.7
+  }
+
+  blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 0.9em
+  }
+
+  .content-width,
+  .header__inner,
+  .footer__inner {
+    margin: 0 auto;
+  }
+
+  .content {
+    margin: 30px auto;
+
+    padding: 10px;
+    background-color: white;
+  }
+
+  .header__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__logo {
+    margin: 10px 0;
+    background-color: #5b6dcd;
+    font-size: 15px;
+    padding: 0 30px;
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+    font-family: 'Yusei Magic', sans-serif
+  }
+
+  .header__nav {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .header__ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none
+  }
+
+  .header__li {
+    background-color: #D3BD9F;
+    border-radius: 5px;
+    padding: 5px 5px;
+    font-size: 14px;
+    border-bottom: 1px solid #E3E3E3;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header__li a {
+    display: inline-block;
+    width: 100%;
+  }
+
+
+
+
+  .header {
+    background-color: darkred;
+    margin-bottom: 20px;
+    color: white;
+    width: 100%;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .header a {
+    color: inherit;
+  }
+
+  .header__li:hover {
+    background-color: black;
+  }
+
+  .header__li:hover a {
+    color: white
+  }
+
+  .header__li:first-child {
+    border-radius: 5px 0 0 5px
+  }
+
+  .header__li:last-child {
+    border: none;
+    border-radius: 0 5px 5px 0
+  }
+
+  .header__li a {
+    color: black;
+    text-decoration: none
+  }
+
+  .header__li a:hover {
+    color: white;
+    background-color: black
+  }
+
+  .main-v {
+    text-align: center;
+  }
+
+  .main-v img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section {
+    margin-bottom: 30px;
+  }
+
+  .section__txt {
+    margin: 15px 0;
+  }
+
+  .section__title {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #E3E3E3
+  }
+
+  .section__img {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .section__img img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section__img span {
+    display: inline-block;
+  }
+
+  .section__img .hosoku {
+    margin: 0;
+    color: #7F7979
+  }
+
+  .footer {
+    margin-top: 30px;
+    width: 100vw;
+    background-color: darkred;
+    color: white
+  }
+
+  .footer__inner {
+    text-align: center
+  }
+
+  .footer__ul {
+    list-style: none
+  }
+
+  .footer .sns {
+    font-size: 30px
+  }
+
+  .footer a {
+    color: white
+  }
+
+}
+
+@media screen and (min-width:768px) {
+  .header__inner {
+    flex-direction: row;
+  }
+
+  .header__nav {
+    width: auto;
+    margin: 0 30px 10px auto;
+    align-self: flex-end;
+  }
+
+  .header__ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none
+  }
+
+  .header__li {
+    border-radius: 0;
+    font-size: 2em;
+    border-bottom: none;
+  }
+
+
+
+  .no {
+    white-space: nowrap;
+  }
+
+  .header__logo {
+    margin: 10px;
+    background-color: #5b6dcd;
+    font-size: 15px;
+    padding: 0 30px;
+    border-radius: 40px;
+    color: white;
+    font-family: 'Yusei Magic', sans-serif
+  }
+
+  iframe {
+    width: 560px;
+  }
+
+  .main-v img {
+    width: auto;
+  }
+
+  .section__img {
+    width: auto;
+  }
+
+  .section__img img {
+    width: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .header__li {
+    background-color: #D3BD9F;
+    padding: 5px 15px;
+    border-right: 1px solid #E3E3E3;
+    text-align: center;
+    align-items: center;
+  }
+
+  .content-width,
+  .header__inner,
+  .footer__inner {
+    margin: 0 auto;
+  }
+
+  .content {
+    margin: 30px auto;
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+
+}
+
+
+@media screen and (min-width:1040px) {
+
+
+  .content-width,
+  .header__inner,
+  .footer__inner {
+    width: 1000px
+  }
+
+
+  .content {
+    width: 910px;
+  }
+
+  p {
+    font-size: 15px
+  }
+}
