@@ -4,11 +4,6 @@
     margin: 0;
     padding: 0;
   }
-  * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-  }
   .wrap {
     z-index: 0;
   }
@@ -25,12 +20,14 @@
   .mobile-menu__nav {
     margin-top: 100px;
     list-style: none;
-    font-size: 5em;
     color: black;
+  }
+  .mobile-menu__li a {
+    font-size: 4em;
   }
   .mobile-menu__btn {
     position: absolute;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-right: 20px;
     top: 0;
     right: 0;
@@ -221,6 +218,7 @@
     padding: 0 30px;
     border-radius: 40px;
     color: white;
+    text-align: center;
     font-family: "Yusei Magic", sans-serif;
   }
   .header__nav {
