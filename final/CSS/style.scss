@@ -18,7 +18,7 @@
     width: 100vw;
     height: 100vh;
     background-color: #d3bd9fe1;
-
+    
     &__nav {
       margin-top: 100px;
       list-style: none;
@@ -32,7 +32,7 @@
 
     &__btn {
       position: absolute;
-      margin-top: 50px;
+      margin-top: 15px;
       margin-right: 20px;
       top: 0;
       right: 0;
@@ -44,7 +44,8 @@
       outline: none !important;
       cursor: pointer;
       transition: 0.7s; //transitionで変形変化の時間を設定
-
+      overflow: hidden;
+      backface-visibility: hidden;
       & > span {
         background-color: black;
         width: 40px;
@@ -117,7 +118,7 @@
   blockquote {
     position: relative;
     padding: 30px 15px 8px 15px;
-    -webkit-box-sizing: border-box;
+
     box-sizing: border-box;
     font-style: italic;
     background: #efefef;
@@ -148,7 +149,7 @@
   }
   blockquote {
     position: relative;
-    -webkit-box-sizing: border-box;
+
     box-sizing: border-box;
     font-style: italic;
     background: #efefef;
@@ -188,40 +189,34 @@
   }
   .header {
     background-color: darkred;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: white;
     width: 100%;
   }
   .header__inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
+    padding: 10px;
     flex-direction: column;
   }
   .header__logo {
-    margin: 10px 0;
+    margin: 10px auto;
     background-color: #5b6dcd;
     font-size: 15px;
-    padding: 0 30px;
+    width: 250px;
     border-radius: 40px;
     color: white;
     text-align: center;
     font-family: "Yusei Magic", sans-serif;
   }
   .header__nav {
-    width: 100%;
-    margin: 0 auto;
+    display: none;
+    width: auto;
+    margin: 0 30px 10px auto;
+    align-self: flex-end;
   }
   .header__ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
+
     flex-direction: column;
     list-style: none;
   }
@@ -232,8 +227,7 @@
     font-size: 14px;
     border-bottom: 1px solid #e3e3e3;
     text-align: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+
     align-items: center;
   }
   .header__li a {
@@ -272,9 +266,9 @@
   }
   .main-v img {
     width: 100%;
-    -o-object-fit: cover;
+
     object-fit: cover;
-    -o-object-position: center;
+
     object-position: center;
   }
   .section {
@@ -292,9 +286,9 @@
       text-align: center;
       & img {
         width: 100%;
-        -o-object-fit: cover;
+
         object-fit: cover;
-        -o-object-position: center;
+
         object-position: center;
       }
       & span {
@@ -328,31 +322,25 @@
 }
 
 @media screen and (min-width: 768px) {
+  .mobile-menu {
+    &__btn {
+      display: none;
+    }
+  }
+
   .header__inner {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
   }
   .header__nav {
-    width: auto;
-    margin: 0 30px 10px auto;
-    -ms-flex-item-align: end;
-    align-self: flex-end;
+    display: block;
   }
   .header__ul {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
     flex-direction: row;
     list-style: none;
   }
   .header__li {
     border-radius: 0;
-    font-size: 2em;
     border-bottom: none;
   }
   .no {
@@ -362,6 +350,7 @@
     margin: 10px;
     background-color: #5b6dcd;
     font-size: 15px;
+    width: 100px;
     padding: 0 30px;
     border-radius: 40px;
     color: white;
@@ -378,20 +367,12 @@
   }
   .section__img img {
     width: auto;
-    -o-object-fit: cover;
+
     object-fit: cover;
-    -o-object-position: center;
+
     object-position: center;
   }
-  .header__li {
-    background-color: #d3bd9f;
-    padding: 5px 15px;
-    border-right: 1px solid #e3e3e3;
-    text-align: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
+
   .content-width,
   .header__inner,
   .footer__inner {
