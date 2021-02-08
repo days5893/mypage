@@ -221,13 +221,14 @@
     list-style: none;
   }
   .header__li {
+    
     background-color: #d3bd9f;
     border-radius: 5px;
     padding: 5px 5px;
     font-size: 14px;
-    border-bottom: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    
     text-align: center;
-
     align-items: center;
   }
   .header__li a {
