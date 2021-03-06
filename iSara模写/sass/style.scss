@@ -1,0 +1,1064 @@
+@charset 'UTF-8';
+@import 'reset';
+$btn-col: #da6b64;
+$cWhite: white;
+$cBlack: black;
+$cYellow: #ebb94d;
+$cBlue: #016ea9;
+$bg-Yellow:#FEF5E0;
+$gray-txt: #777777;
+
+@media screen and (min-width: 480px) {
+
+  h2,
+  h3 {
+    line-height: 40px;
+  }
+
+  html {
+    font-size: 10px;
+  }
+
+
+
+  body {
+    color: #333333;
+    line-height: 1.6;
+    letter-spacing: 1.5px;
+  }
+
+  p {
+    margin: 0 0 10px;
+  }
+
+  details {
+    cursor: pointer;
+  }
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .txtl {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .txts {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .txtxs {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+
+  .txtm {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .wrap {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+  }
+
+
+
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: $cWhite;
+    width: 100%;
+
+    &__title {
+      position: relative;
+      padding: 0;
+      height: 62px;
+      max-width: 100%;
+    }
+
+    &__subtitle {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0px;
+    }
+
+    &__logo {
+      position: absolute;
+      top: 25px;
+      left: 10px;
+      margin-top: 0;
+
+      & img {
+        width: 90px;
+      }
+    }
+
+    &__contact {
+      display: block;
+      text-align: center;
+      position: absolute;
+      right: 0px;
+      top: 0;
+      padding: 9px 11px;
+      background-color: $btn-col;
+
+      & img {
+        display: block;
+        width: 20px;
+        margin: auto;
+      }
+
+      & a {
+        font-size: 1.2rem;
+        display: block;
+        color: $cWhite;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .main-v {
+    @extend .flex; //flexで上下左右中央揃え
+    justify-content: center;
+    align-items: center;
+    height: 312px;
+    background-image: url(/images/mainsp.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+
+    & .mainlogo {
+      max-width: 317px;
+      width: 90%;
+      margin: 20px;
+    }
+
+    & h1 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    & .txtl {
+      margin: 0;
+    }
+    & .txtm {
+      line-height: 1;
+    }
+  }
+}
+
+
+
+.btn {
+  position: relative; //親要素をrelativeを指定して
+  font-size: 2rem;
+  padding: 15px 20px;
+  margin: 25px 20px 10px 20px;
+  background-color: $btn-col;
+  border-radius: 50px;
+
+
+  & a {
+    position: absolute; //aを.btnを基準に相対移動
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; //幅と高さを100％にして.btnの全体にリンクが付くようにする。
+    letter-spacing: normal;
+    color: $cWhite;
+    text-decoration: none;
+  }
+}
+
+$cTwitter:#1B95E0;
+$cFb:#1877F2;
+
+.sns {
+  margin-bottom: 10px;
+
+  &__btn {
+    display: inline-block;
+    font-size: 11px;
+    border-radius: 3px;
+    padding: 5px;
+    
+    & a {
+      color: $cWhite;
+      text-decoration: none;
+    }
+
+    & i {
+      display: inline-block;
+      margin-right: 5px;
+      color: $cWhite;
+    }
+
+    &.twitter {
+      background-color: $cTwitter;
+    }
+
+    &.fb {
+      background-color: $cFb;
+    }
+  }
+}
+
+@mixin bracketswide($color: $cYellow) {
+  margin: 0 auto;
+  position: relative;
+  width: 95%;
+  max-width: calc(100% - 10px);
+  padding: 5px 20px;
+  box-sizing: border-box;
+
+  & h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-top: 4px solid $color;
+    border-left: 4px solid $color;
+
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+    border-bottom: 4px solid $color;
+    border-right: 4px solid $color;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+  }
+}
+
+.yellowbracketswide {
+  @include bracketswide;
+}
+
+.whitebracketswide {
+  @include bracketswide($cWhite);
+  padding: 10px;
+}
+
+.yellowtxt {
+  color: $cYellow;
+}
+
+.icon {
+  @extend .flex;
+  align-items: center;
+  position: relative;
+  top: 0px;
+}
+
+.circle {
+  color: #ebb94d;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 12px;
+  line-height: 60px;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.section {
+  &__zero {
+    color: $cWhite;
+    background-color: $cYellow;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 600;
+
+    & .txtxs {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0;
+
+      & p {
+        margin: 10px;
+      }
+    }
+
+    & .tyuusyaku {
+      background-color: #F9F2F4;
+      display: inline-block;
+      border-radius: 3px;
+      padding: 2px 4px;
+      color: #C7254E;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__intro {
+    padding: 30px 0;
+    height: inherit;
+    background-image: url(/images/introbottom.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    text-align: center;
+
+    & .contents {
+      padding: 25px 0;
+      letter-spacing: normal;
+
+      & p {
+        font-weight: 300;
+        margin-bottom: 30px;
+
+        & span {
+          font-weight: bold;
+          background: linear-gradient(transparent 70%, $cYellow 70%); //背景にグラデーションをかけて下線を引く
+        }
+      }
+    }
+  }
+
+  &__about1 {
+    background-color: $bg-Yellow;
+    padding-bottom: 40px;
+    text-align: center;
+
+    & .abouttitle {
+      & .circle {
+        background-color: $cYellow;
+        color: $cWhite;
+      }
+
+      & p {
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+    }
+
+    & .box {
+      padding: 10px;
+      margin: 30px 20px;
+      background-color: $cWhite;
+      border: 2px solid $cYellow;
+
+
+      & img {
+        height: 30px;
+      }
+
+
+      & .item {
+        display: inline-block;
+        padding: 10px;
+
+        & .txts {
+          font-size: 1rem;
+          font-weight: 300;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+
+  &__about2 {
+    color: $cWhite;
+    text-align: center;
+
+    & .bg {
+      padding: 30px;
+      background-image: url(/images/aboutsecondbgsp.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    & h2 {
+      margin: 20px 0;
+      line-height: 1;
+    }
+
+    & .txtm {
+      font-size: 1.3rem;
+    }
+
+
+
+    & .box {
+      @extend .flex;
+      margin: 0 -15px;
+
+      & .container {
+        padding: 0 15px;
+        margin-top: 30px;
+      }
+
+      & .item {
+        padding: 15px 50px;
+        margin-bottom: 15px;
+        background-color: $cWhite;
+        border-radius: 5px;
+
+        & .txts {
+          color: black;
+        }
+
+        & .step {
+          border-radius: 5px;
+          color: $cWhite;
+          background-color: $cYellow;
+        }
+
+      }
+    }
+
+    & .abouttxt {
+      padding: 20px 0;
+      background-color: $cBlue;
+    }
+  }
+
+  &__about3 {
+    text-align: center;
+
+    & h2 {
+      margin-top: 20px;
+      margin-bottom: 35px;
+    }
+
+    & .txtm {
+      font-weight: normal;
+    }
+
+    & .box {
+      @extend .flex;
+      flex-direction: row;
+      justify-content: center;
+      margin: 0 -15px;
+
+      & .item {
+        padding: 5px;
+        flex-basis: 100px;
+      }
+    }
+  }
+
+  &__learn {
+    padding: 30px 0;
+    background-color: $bg-Yellow;
+
+    & h2 {
+      text-align: center;
+
+      & .txtm {
+        margin: 15px auto -15px;
+        line-height: 1.4;
+        display: inline-block; //inline-blockで余白指定できるようにする。
+      }
+    }
+
+    & .container {
+      & .merit {
+        padding: 0 15px;
+        margin-top: 20px;
+
+        & .bg-img {
+          height: 120px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+
+          &.freelance {
+            background-image: url(/images/learnfromfreelancer.jpg);
+          }
+
+          &.learn {
+            background-image: url(/images/learnfromprojects.jpg);
+          }
+
+          &.zerocost {
+            background-image: url(/images/actuallyfree.jpg);
+          }
+        }
+
+        & .yellowtxt {
+          margin-top: 10px;
+          margin-bottom: 8px;
+          text-align: center;
+        }
+
+        & .txts {
+          font-weight: normal;
+        }
+
+        & .learndetail {
+          padding: 0 20px;
+        }
+      }
+    }
+
+    & .support {
+      padding: 10px;
+      margin: 15px 20px;
+      background-color: $cWhite;
+      border: 2px solid $cYellow;
+      border-radius: 5px;
+      text-align: center;
+
+      & .txts {
+        font-size: 1rem;
+        letter-spacing: 0;
+      }
+    }
+
+    & .txtxs {
+      text-align: center;
+      padding: 0 10px;
+    }
+  }
+
+  &__member {
+    padding: 20px 0;
+    background-image: url(/images/teacherbgsp.jpg);
+    background-size: cover;
+    color: $cWhite;
+
+    & h2 {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    & .txts {
+      text-align: center;
+    }
+
+    & .container {
+      padding: 0 10px;
+      ;
+
+      & .item {
+        text-align: center;
+        font-weight: normal;
+
+        & img {
+          position: relative;
+          width: 120px;
+          top: 35px;
+          border-radius: 50%;
+        }
+
+        & .detail {
+          padding: 40px 10px 10px 10px;
+          border: 3px solid $cWhite;
+        }
+
+        & .txtleft {
+          text-align: left;
+
+        }
+
+        & .txtm,
+        .txts {
+          font-weight: 300;
+        }
+
+        & .txtm {
+          font-size: 1.2rem;
+        }
+      }
+
+    }
+  }
+
+  &__qa {
+    & .question {
+      position: relative;
+      text-align: center;
+      color: $cWhite;
+      background-color: $cYellow;
+      padding: 20px 0;
+
+      &:after {
+        content: "";
+        height: 0;
+        position: absolute;
+        width: 0;
+        border: 15px solid transparent; //大きさを設定してtransparentにして枠線だけ書く。
+        border-top-color: $cYellow; //widthとheightが0でborderの一部を設定して三角にする。
+        top: 100%;
+        left: 50%;
+        margin-left: -15px;
+      }
+
+      & h2 {
+        margin: 0 10px;
+        font-size: 1.4rem;
+
+
+      }
+
+      & .qaicon {
+        @extend .icon;
+        padding: 10px;
+        margin: 0 0 10px;
+
+        & .circle {
+          color: $cYellow;
+          background-color: $cWhite;
+        }
+      }
+    }
+
+    & .answer {
+      @extend .flex;
+      padding: 20px 0;
+      text-align: center;
+
+      & .message {
+        padding: 0 15px;
+        margin: 0 auto;
+
+        & .container {
+          margin: 0 -15px;
+
+          & .item {
+            @extend .flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px 0;
+            margin: 0 10px;
+            text-align: left;
+
+            &__img {
+              background-color: #fff;
+              padding-right: 15px;
+              flex-basis: calc(100% - 20px);
+              flex-shrink: 2;
+
+              & img {
+                border: solid;
+                border-color: $cYellow;
+              }
+            }
+
+            &__txt {
+              flex-basis: calc(100% - 20px);
+              color: $gray-txt;
+              font-weight: 400;
+
+              & p {
+                font-size: 1.8rem;
+              }
+
+              & small {
+                margin-top: 8px;
+                text-decoration: underline;
+                font-size: 1.5rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__lecture {
+    padding: 20px 0;
+    background-image: url(/images/classbgsp.jpg);
+    background-size: cover;
+    color: $cWhite;
+    text-align: center;
+
+    & h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    & .container {
+
+      padding: 20px 10px;
+
+      &__wrap {
+        border: 2px solid $cBlue;
+        border-radius: 5px;
+        background-color: $cWhite;
+
+        &:last-child {
+          margin-top: 15px;
+        }
+      }
+
+      & .txtm {
+        padding: 15px;
+        background-color: $cBlue;
+      }
+
+      & ul {
+        background-color: $cWhite;
+        color: $cBlack;
+        font-size: 1.2rem;
+
+        & li {
+          padding: 10px;
+          border-bottom: 1px dotted #e5e5e5
+        }
+      }
+
+
+    }
+
+
+  }
+
+  &__point {
+    padding: 20px 0;
+    text-align: center;
+    color: $cWhite;
+    background-color: $cBlue;
+
+    .txtm {
+      margin: 0;
+    }
+  }
+
+  &__method {
+    padding: 20px 0;
+
+    & h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    & .detailsp {
+      padding: 20px 15px;
+      margin-bottom: 20px;
+
+      & details {
+        position: relative;
+        background-color: $bg-Yellow;
+        padding: 10px 15px;
+        margin-bottom: 3px;
+
+        &::after {
+          position: absolute;
+          right: 10px;
+          top: 20px;
+          display: block;
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-bottom: 4px solid $cBlack;
+          border-right: 4px solid $cBlack;
+          transform: rotate(45deg);
+        }
+
+        &[open] {
+          &::after {
+            border: 0;
+            border-top: 4px solid $cBlack;
+            border-left: 4px solid $cBlack;
+          }
+        }
+
+        & summary {
+          outline: none;
+          color: $cBlack;
+          font-size: 1.6rem;
+          font-weight: 600;
+
+          & img {
+            width: 35px;
+            margin-right: 15px;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  &__why {
+    padding: 20px 15px;
+    background-image: url(/images/bangkokbgsp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    & h2 {
+      font-size: 2.4rem;
+      text-align: center;
+    }
+
+    & .inner {
+      padding: 0 20px;
+      color: $cWhite;
+    }
+
+    & .txtxs {
+      letter-spacing: normal;
+      font-weight: 400;
+    }
+
+    & ul {
+      list-style: inside;
+      margin: 20px 0;
+    }
+  }
+
+  &__special {
+    padding: 20px 0;
+    background-color: #F7C23C;
+    text-align: center;
+
+    & h2 {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+
+    & .txts {
+      & span {
+        color: $cWhite;
+      }
+    }
+
+    & .title {
+      width: fit-content;
+      position: relative;
+      top: 40px;
+      padding: 0 10px;
+      background-color: #F7C23C;
+      margin: 0 auto;
+    }
+
+    & .specialbox {
+      padding: 30px;
+      margin: 0 15px;
+      border: 2px solid $cWhite;
+
+      & .box {
+        color: $cWhite;
+
+        & .item {
+          display: table;
+          text-align: left;
+          margin: 15px 0;
+
+          &__left {
+            display: table-cell;
+
+            & p {
+              @extend .circle;
+            }
+          }
+
+          &__right {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 12px 0;
+
+            & p {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  &__borantea {
+    padding: 20px 10px;
+    background-image: url(/images/specialdetailsp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $cWhite;
+    text-align: center;
+
+    & h2 {
+      margin: 20px 0;
+
+      &:first-child {
+        line-height: normal;
+      }
+    }
+
+    & .txts {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__message {
+    padding: 20px 0;
+    text-align: center;
+
+    & h2 {
+      margin-top: 20px;
+      margin-bottom: 35px;
+    }
+
+    .container {
+      @extend .flex;
+
+      &__inner {
+        margin: 0 10px 15px 10px;
+      }
+
+      &__img {
+        width: 100%;
+        padding: 5px;
+      }
+
+      &__txt {
+        padding: 5px;
+        font-size: 1.4rem;
+        text-align: left;
+
+        & ul {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__contact {
+    padding: 20px 15px;
+    background-color: $cYellow;
+    text-align: center;
+
+    & .submitbtn {
+      width: 100%;
+      background-color: $btn-col;
+      font-size: 2.3rem;
+      font-weight: 600;
+      color: $cWhite;
+      border-radius: 20px;
+      border: none;
+    }
+
+    & form {
+
+      & input,
+      textarea {
+        font-size: 1.4rem;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 25px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      & input {
+        height: 55px;
+      }
+
+      & textarea {
+        height: 100px;
+      }
+
+    }
+  }
+
+  &__faq {
+    padding: 20px 15px;
+
+    & h2 {
+      text-align: center;
+    }
+
+    & .detailsbox {
+      margin-bottom: 20px;
+      & details {
+        position: relative;
+        padding: 10px;
+        margin-top: 5px;
+        @extend .txtm;
+        color: $cBlack;
+        border: 1px solid #E5E5E5;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &::after {
+          position: absolute;
+          top: calc(50% - 6px);
+          right: 15px;
+          display: block;
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-bottom: 4px solid;
+          border-right: 4px solid;
+          border-color: #E5E5E5;
+          transform: rotate(45deg);
+        }
+
+        &[open] {
+          &::after {
+            border: 0;
+            border-top: 4px solid;
+            border-left: 4px solid;
+            border-color: #E5E5E5;
+          }
+        }
+      }
+
+      & summary {
+        line-height: 17px;
+        margin-right: 3px;
+        outline: none;
+
+        & i {
+          color: #3A93CA;
+        }
+
+        &::selection {
+          background-color: transparent;
+        }
+      }
+    }
+
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 20px 15px 0 0;
+  background-color: #ECECEC;
+  & .copyright {
+    margin: 0;
+    padding-bottom: 5px;
+  }
+  & .sns {
+    &__btn {
+     height: 20px;
+     padding: 1px 8px 1px 6px;
+     font-weight: 500;
+     cursor: pointer;
+    }
+  }
+}
